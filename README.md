@@ -1,2 +1,2 @@
 # TemuMain
-pair project phase 1 HACKTIV8
+pairProject phase 1 Hacktiv8

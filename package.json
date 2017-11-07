@@ -1,0 +1,26 @@
+{
+  "name": "temumain",
+  "version": "1.0.0",
+  "description": "pairProject phase 1 Hacktiv8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayundahamzah/TemuMain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayundahamzah/TemuMain/issues"
+  },
+  "homepage": "https://github.com/ayundahamzah/TemuMain#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "pg": "^7.4.0",
+    "sequelize": "^4.22.5"
+  }
+}
