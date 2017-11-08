@@ -6,13 +6,16 @@
   </head>
   <body>
     <h1>GAME LIST</h1>
-    <ul>
-      <%dataGames.forEach((games)=>{%>
-        <li><%=games.Game_name%></li>
-        <li><%=games.Thumbnail%></li>
-        <li><%=games.Description%></li>
-      <%})%>
-    </ul>
-
+    <table border="1">
+        <ul>
+          <%dataGames.forEach((games)=>{%>
+            <tr>
+            <td><%=games.Game_name%></td>
+            <td><%=games.Thumbnail%></td>
+            <td><%=games.Description%></td>
+            </tr>
+          <%})%>
+        </ul>
+    </table>
   </body>
 </html>
