@@ -15,12 +15,7 @@ function checkLogin(req, res, next){
 // Read
 router.get('/:id', checkLogin, function(req, res){
   db.Player.findById(req.params.id).then(function (dataPlayer){
-    if(dataPlayer){
-      req.session.loggedIn = true
-      res.render('player', {dataPlayer: dataPlayer})
-    } else {
-      res.render('login', {error: true})
-    }
+    res.render('player', {dataPlayer: dataPlayer})
   }).catch(function (err){
     console.log(err);
   })

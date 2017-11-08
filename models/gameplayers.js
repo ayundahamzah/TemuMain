@@ -4,12 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     GameId: DataTypes.INTEGER,
     PlayerId: DataTypes.INTEGER,
     Status: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  GamePlayer.associate = function(models) {
+        GamePlayer.belongsTo(models.Game)
+        GamePlayer.belongsTo(models.Player)
+    }
   return GamePlayer;
 };
