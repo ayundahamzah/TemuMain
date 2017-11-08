@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if(error != null){ %>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+        <table border="1">
+          <tr>
+            <form action="/gamess/edit/<%= dataGames.id %>" method="post">
+              <td><input type="text" name="Game_name" placeholder="Game Name" value="<%= dataGames.Game_name %>"></td>
+              <td><input type="text" name="Thumbnail" placeholder="Thumbnail" value="<%= dataGames.Thumbnail %>"></td>
+              <td><input type="text" name="Description" placeholder="Description" value="<%= dataGames.Description %>"></td>
+              <td><input type="submit" value="SAVE"></td>
+            </form>
+          </tr>
+        </table>
+  </body>
+</html>
