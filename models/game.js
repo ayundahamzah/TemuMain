@@ -4,12 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     Game_name: DataTypes.STRING,
     Thumbnail: DataTypes.STRING,
     Description: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  //CLASS METHOD
+  Game.associate = function(models) {
+      Game.belongsToMany(models.Player,{through:"GamePlayer"})
+      Game.hasMany(models.GamePlayer)
+  }
   return Game;
 };
