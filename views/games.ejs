@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game List</title>
+  </head>
+  <body>
+    <h1>GAME LIST</h1>
+    <ul>
+      <%dataGames.forEach((games)=>{%>
+        <li><%=games.Game_name%></li>
+        <li><%=games.Thumbnail%></li>
+        <li><%=games.Description%></li>
+      <%})%>
+    </ul>
+
+  </body>
+</html>

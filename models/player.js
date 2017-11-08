@@ -7,12 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     Profile: DataTypes.STRING,
     Photo: DataTypes.STRING,
     Friends: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  //CLASS METHOD
+  Player.associate = function(models) {
+      Player.belongsToMany(models.Game,{through:"GamePlayer"})
+      Player.hasMany(models.GamePlayer)
+  }
   return Player;
 };

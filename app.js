@@ -1,19 +1,34 @@
 const express=require('express');
 const app = express();
 const bodyParser =require('body-parser')
-const 
+const path = require('path')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.set('views','./views')
 app.set('view engine','ejs')
 
+// //require FILE router
+const home = require('./routers/home')
+const game =require('./routers/game')
 
+
+// /home/document/public
+//
+// /images/thumbnail/a.jpg
+//
+// img<src = /
+
+//homepage
+app.use('/', home );
+
+//GAME PAGE
+app.use('/games',game)
 
 
 
