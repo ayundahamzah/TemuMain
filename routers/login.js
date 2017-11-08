@@ -4,7 +4,6 @@ const router = express.Router();
 const db = require('../models')
 
 router.get('/', function(req, res){
-  // res.send('routing /players/add')
   res.render('loginplayer')
 })
 
