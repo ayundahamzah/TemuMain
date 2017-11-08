@@ -37,6 +37,7 @@ router.post('/add/:id', function(req, res){
     dataPlayer.update({
       Username: req.body.Username,
       Profile: req.body.Profile,
+      Gender: req.body.Gender
     }).then(function(){
       res.redirect(`/players/${req.params.id}`)
     }).catch(function(err){
@@ -61,6 +62,7 @@ router.post('/edit/:id', function(req, res){
       Email: req.body.Email,
       Password: req.body.Password,
       Profile: req.body.Profile,
+      Gender: req.body.Gender
     }).then(function(){
       res.redirect(`/players/${req.params.id}`)
     }).catch(function(err){
