@@ -6,6 +6,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn("GamePlayers", "Status")
+    return queryInterface.addColumn("GamePlayers", "Status", {type:Sequelize.STRING})
   }
 };
