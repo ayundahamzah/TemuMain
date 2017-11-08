@@ -1,7 +1,13 @@
 const express=require('express');
 const app = express();
 const bodyParser =require('body-parser')
-const 
+const path = require('path')
+const session = require('express-session')
+
+// Router
+const player = require('./router/player')
+const register = require('./router/register')
+const login = require('./router/login')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -9,12 +15,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
-
 app.set('views','./views')
 app.set('view engine','ejs')
 
+// Use the session middleware
+app.use(session({ secret: 'keyboard cat'}))
 
 
+app.use('/players', player)
+app.use('/register', register)
+app.use('/login', login)
 
 
 
