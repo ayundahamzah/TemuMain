@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var GamePlayers = sequelize.define('GamePlayers', {
+  var GamePlayer = sequelize.define('GamePlayer', {
     GameId: DataTypes.INTEGER,
     PlayerId: DataTypes.INTEGER,
     Status: DataTypes.STRING
@@ -11,5 +11,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return GamePlayers;
+  return GamePlayer;
 };

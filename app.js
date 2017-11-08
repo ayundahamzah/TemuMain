@@ -5,9 +5,9 @@ const path = require('path')
 const session = require('express-session')
 
 // Router
-const player = require('./router/player')
-const register = require('./router/register')
-const login = require('./router/login')
+const player = require('./routers/player')
+const register = require('./routers/register')
+const login = require('./routers/login')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
