@@ -14,13 +14,14 @@ router.post('/', function(req, res){
       Password: req.body.Password
     }
   }).then(function(dataPlayer){
-      req.session.loggedIn = true
+      // req.session.loggedIn = true
       if(dataPlayer.Username == null && dataPlayer.Profile == null){
         res.redirect(`/players/add/${dataPlayer.id}`)
       } else {
         res.redirect(`/players/${dataPlayer.id}`)
       }
   }).catch(function(err){
+    console.log(err);
     res.render('loginplayer', {err:true})
   })
 })

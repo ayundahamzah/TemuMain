@@ -14,9 +14,18 @@ function checkLogin(req, res, next){
 }
 
 // Read
-router.get('/:id',checkLogin, function(req, res){
-  db.Player.findById(req.params.id).then(function (dataPlayer){
-    res.render('player', {dataPlayer: dataPlayer})
+router.get('/:id', function(req, res){
+  db.Player.findById(req.params.id, {include: db.Game}).then(function (dataPlayer){
+    // res.send(dataPlayer);
+    // res.render('player', {
+    //   dataPlayer: dataPlayer
+    // })
+    db.Game.findAll().then(function(dataGame){
+      res.render('player', {
+        dataPlayer: dataPlayer,
+        dataGame: dataGame
+      })
+    })
   }).catch(function (err){
     console.log(err);
   })
