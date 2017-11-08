@@ -5,15 +5,16 @@ const db = require('../models')
 
 // FUNGSI HELPER
 function checkLogin(req, res, next){
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn = true) {
     next()
   }else{
-    res.redirect('/login')
+    res.send('gagal')
+    // res.redirect('/login')
   }
 }
 
 // Read
-router.get('/:id', checkLogin, function(req, res){
+router.get('/:id',checkLogin, function(req, res){
   db.Player.findById(req.params.id).then(function (dataPlayer){
     res.render('player', {dataPlayer: dataPlayer})
   }).catch(function (err){

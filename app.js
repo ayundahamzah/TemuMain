@@ -17,9 +17,9 @@ app.set('view engine','ejs')
 const session = require('express-session')
 
 // Router
-const player = require('./router/player')
-const register = require('./router/register')
-const login = require('./router/login')
+const player = require('./routers/player')
+const register = require('./routers/register')
+const login = require('./routers/login')
 const home = require('./routers/home')
 const game =require('./routers/game')
 
