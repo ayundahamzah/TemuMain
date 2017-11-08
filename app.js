@@ -24,6 +24,8 @@ const home = require('./routers/home')
 const game =require('./routers/game')
 
 
+
+
 // /home/document/public
 //
 // /images/thumbnail/a.jpg
@@ -31,7 +33,9 @@ const game =require('./routers/game')
 // img<src = /
 
 //homepage
+
 app.use('/', home );
+
 app.use('/register', register)
 app.use('/login', login)
 
@@ -40,7 +44,9 @@ app.use('/login', login)
 app.use('/players', player)
 
 //GAME PAGE
+
 app.use('/games',game)
+
 
 
 
