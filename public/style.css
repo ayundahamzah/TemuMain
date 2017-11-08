@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+/* index.html*/
+h1, p {
+  font-family: 'oswald';
+
+}
+
+.main {
+  /*font-family: 'roboto';*/
+  color: rgba(167, 167, 175, 0.96);
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* Main */
+.main {
+  text-align: center;
+  background: url("main.jpg");
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  border: none;
+  height: 800px;
+
+}
+
+.main .container {
+  position: relative;
+  top: 100px;
+
+}
+
+.main h1 {
+  color: #000;
+  margin: 0;
+  font-size: 150px;
+  /*background: rgba(167, 167, 175, 0.5);*/
+}
+
+.main p {
+  color: #000;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  background: rgba(167, 167, 175, 0.96);
+  border: none;
+}
+
+a {
+  font-family: 'arial';
+}
+.main .btn {
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 30px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+a.btn:hover {
+  background:#a7a7af;
+  color:#000;
+}
+
+/* About*/
+.about {
+  background: url("main.jpg") no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 40px;
+  color: #3c3d3f;
+}
+.about h3{
+    font-family: 'arial';
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    color: #3c3d3f;
+    margin-top: 30px;
+}
+.value-facts {
+  margin: 40px auto;
+  width: 60%;
+  color: #3c3d3f;
+}
+.fact {
+  border: 1px solid #3c3d3f;
+  padding: 40px 0px;
+  margin: 5px 0px;
+  text-align: center;
+}
+
+.fact h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+}
+.about p {
+    font-family: 'arial';
+    text-align: center;
+
+
+
+
+}
+
+.btn2 {
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 30px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.btn2:hover {
+  background:#a7a7af;
+  color:#000;
+}
+
+.audio {
+    float: right;
+    visibility:hidden;
+}
+
+/*FOOTER*/
+
+footer {
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%
+  height: 100%;
+  background-size: cover;
+
+}
+
+.socmed {
+  float: right;
+}
+
+.socmed ul li {
+
+  display: inline;
+  margin-right: 25px;
+
+
+}
+.socmed ul li a img {
+
+  height: 35px;
+  width: 35px;
+
+}
+
+#instagram img {
+  height: 30px;
+  width: 30px;
+  padding-bottom: 2px;
+}
