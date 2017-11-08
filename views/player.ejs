@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+  </head>
+  <h2>Profile</h2>
+  <body>
+    <table border=1>
+      <tr>
+        <td>Profile Picture</td>
+        <td>
+          Profile Description
+          <ul>
+            <li>Username: <%= dataPlayer.Username %></li>
+            <li>Email: <%= dataPlayer.Email %></li>
+            <li>Profile: <%= dataPlayer.Profile %></li>
+            <br><a href="/players/edit/<%= dataPlayer.id %>">Edit Profile</a>
+            <br><a href="/players/delete/<%= dataPlayer.id %>">Delete Account</a>
+            <br><a href="/login">Sign Out</a>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <h3>List of Games</h3>
+    <table border=1>
+      <th>Currectly Playing</th>
+      <tr>
+        <td>Game</td>
+        <td>Game</td>
+        <td>Game</td>
+      </tr>
+    </table>
+    <table border=1>
+      <th>Was Played</th>
+      <tr>
+        <td>Game</td>
+        <td>Game</td>
+        <td>Game</td>
+      </tr>
+    </table>
+  </body>
+</html>
