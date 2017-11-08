@@ -17,11 +17,13 @@ app.set('view engine','ejs')
 const session = require('express-session')
 
 // Router
-const player = require('./routers/player')
-const register = require('./routers/register')
-const login = require('./routers/login')
-// const home = require('./routers/home')
-// const game =require('./routers/game')
+const player = require('./router/player')
+const register = require('./router/register')
+const login = require('./router/login')
+const home = require('./routers/home')
+const game =require('./routers/game')
+
+
 
 
 // /home/document/public
@@ -31,7 +33,9 @@ const login = require('./routers/login')
 // img<src = /
 
 //homepage
-// app.use('/', home );
+
+app.use('/', home );
+
 app.use('/register', register)
 app.use('/login', login)
 
@@ -40,7 +44,9 @@ app.use('/login', login)
 app.use('/players', player)
 
 //GAME PAGE
-// app.use('/games',game)
+
+app.use('/games',game)
+
 
 
 
