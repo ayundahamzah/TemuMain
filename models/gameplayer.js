@@ -1,9 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var GamePlayer = sequelize.define('GamePlayer', {
+    id: {
+      primaryKey: true,
+      autoIncrement: true,
+      type: DataTypes.INTEGER
+    },
     GameId: DataTypes.INTEGER,
     PlayerId: DataTypes.INTEGER,
-    Status: DataTypes.STRING
   });
   GamePlayer.associate = function(models) {
         GamePlayer.belongsTo(models.Game)

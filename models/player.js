@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     Username: DataTypes.STRING,
     Profile: DataTypes.STRING,
     Photo: DataTypes.STRING,
-    Friends: DataTypes.STRING
+    Friends: DataTypes.STRING,
+
   });
   //CLASS METHOD
   Player.associate = function(models) {

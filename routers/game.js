@@ -48,5 +48,16 @@ router.get('/delete/:id', (req, res) => {
     });
 });
 
+////menampilkan Game Page dan Player yg enrolled di dalamnya
+router.get('/:id/playing',(req,res)=>{
+    db.Game.findById(req.params.id,{
+        include:[{
+          model: db.Player,
+        order: [[db.Player,'username','ASC']]
+        }]
+    }).then(result=>{
+      res.render('games',{result})
+    })
+})
 
 module.exports= router
