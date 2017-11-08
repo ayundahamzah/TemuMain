@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if(error != null){ %>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+        <table>
+          <tr>
+            <form action="/games/add" method="post">
+                <td><input type="text" name="Game_name" placeholder="Game Name"></td>
+                <td><input type="text" name="Thumbnail" placeholder="Thumbnail"></td>
+                <td><input type="text" name="Description" placeholder="Description"></td>
+                <td><input type="submit" value="Add"></td>
+            </form>
+          </tr>
+        </table>
+
+</body>
+
+</html>

@@ -5,15 +5,16 @@ const db = require('../models')
 
 // FUNGSI HELPER
 function checkLogin(req, res, next){
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn = true) {
     next()
   }else{
-    res.redirect('/login')
+    res.send('gagal')
+    // res.redirect('/login')
   }
 }
 
 // Read
-router.get('/:id', checkLogin, function(req, res){
+router.get('/:id',checkLogin, function(req, res){
   db.Player.findById(req.params.id).then(function (dataPlayer){
     res.render('player', {dataPlayer: dataPlayer})
   }).catch(function (err){
@@ -36,6 +37,7 @@ router.post('/add/:id', function(req, res){
     dataPlayer.update({
       Username: req.body.Username,
       Profile: req.body.Profile,
+      Gender: req.body.Gender
     }).then(function(){
       res.redirect(`/players/${req.params.id}`)
     }).catch(function(err){
@@ -60,6 +62,7 @@ router.post('/edit/:id', function(req, res){
       Email: req.body.Email,
       Password: req.body.Password,
       Profile: req.body.Profile,
+      Gender: req.body.Gender
     }).then(function(){
       res.redirect(`/players/${req.params.id}`)
     }).catch(function(err){
