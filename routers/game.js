@@ -69,12 +69,36 @@ router.get('/:id/gamespage',(req,res)=>{
 })
 
 router.post('/:id/gamespage', (req,res) => {
-  db.Player.findById(req.session.playerId).then(
-    (dataPlayer) => {
-      dataPlayer.setStatus()
-    }
-  )
+  db.GamePlayer.create({
+    GameId: req.params.id,
+    PlayerId: req.session.playerId,
+    Status: true
+  }).then(function(){
+    res.redirect(`/games/${req.params.id}/gamespage/after`)
+  }).catch(function(err){
+      console.log(err);
+  })
 })
+
+
+router.get('/:id/gamespage/after', function(req,res) {
+  db.Player.findAll(
+    {include: [db.Game]},
+    {where:{
+      id: req.params.id
+      }
+    }
+  ).then(function(results){
+      // console.log(results[0].Games[0].GamePlayer.Status);
+      // res.send(results)
+      res.render('gamespage-after', {results:results})
+      }).catch(function(err){
+        console.log(err);
+      })
+})
+
+
+
 
 
 module.exports= router

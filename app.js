@@ -24,7 +24,7 @@ app.use(session({ secret: 'keyboardcat'}))
 const player = require('./routers/player')
 const register = require('./routers/register')
 const login = require('./routers/login')
-const home = require('./routers/home')
+
 const game =require('./routers/game')
 
 
@@ -38,10 +38,10 @@ const game =require('./routers/game')
 
 //homepage
 
-app.use('/', home );
+app.use('/', login );
 
 app.use('/register', register)
-app.use('/login', login)
+
 
 
 //PLAYER/PROFILE PAGES

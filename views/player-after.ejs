@@ -1,5 +1,13 @@
 <%-include("partials/header",{title:'Player'})%>
-  <h2>Profile</h2>
+  <table>
+      <tr>
+        <td><h2><%= dataPlayer.Username %></h2></td>
+          <form class="" action="/" method="post">
+            <td><input type="submit" name="" value="Connect"></td>
+          </form>
+      </tr>
+  </table>
+
   <body>
     <table border=1>
       <tr>
@@ -10,8 +18,6 @@
             <li>Username: <%= dataPlayer.Username %></li>
             <li>Email: <%= dataPlayer.Email %></li>
             <li>Profile: <%= dataPlayer.Profile %></li>
-            <br><a href="/players/edit/<%= dataPlayer.id %>">Edit Profile</a>
-            <br><a href="/players/delete/<%= dataPlayer.id %>">Delete Account</a>
           </ul>
         </td>
       </tr>
@@ -20,15 +26,13 @@
     <h3>List of Games</h3>
     <table border=1>
       <th>Currectly Playing</th>
-
-    </table>
-    <table border=1>
-      <th>Was Played</th>
-      <tr>
-        <td>Game</td>
-        <td>Game</td>
-        <td>Game</td>
-      </tr>
+        <% for(let i = 0; i < dataPlayer.Games.length; i++){ %>
+          <tr>
+          <% if(dataPlayer.Games[i].GamePlayer.Status == 'true'){ %>
+            <td><%= dataPlayer.Games[i].Game_name %></td>
+          <% } %>
+          </tr>
+        <% } %>
     </table>
   </body>
 </html>

@@ -12,10 +12,9 @@
           <%=results.Description%>
         </td>
         <td>
-          <form class="" action="/games" method="post">
-            <input type="submit" name="" value="">
+          <form class="" action="/games/<%= results.id %>/gamespage" method="post">
+            <input type="submit" name="status" value="Play">
           </form>
-          <a href="#">Play</a>
         </td>
       </tr>
     </table>
