@@ -1,0 +1,19 @@
+<%-include("partials/header",{title:'Game Page'})%>
+  <body>
+    <table border=1>
+      <tr>
+        <td><%=results[0].Games[0].Game_name%></td>
+        <td>
+          <%=results[0].Games[0].Description%>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <%for(let i=0;i<results.length;i++){%>
+      <tr>
+          <td><a href="/players/<%= results[i].id %>/after"><%=results[i].Username%></a></td>
+        <%}%>
+      </tr>
+    </table>
+  </body>
+</html>
