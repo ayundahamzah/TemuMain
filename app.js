@@ -16,6 +16,10 @@ app.set('view engine','ejs')
 
 const session = require('express-session')
 
+
+// Use the session middleware
+app.use(session({ secret: 'keyboardcat'}))
+
 // Router
 const player = require('./routers/player')
 const register = require('./routers/register')
@@ -52,8 +56,6 @@ app.use('/games',game)
 
 
 
-// Use the session middleware
-app.use(session({ secret: 'keyboard cat'}))
 
 
 

@@ -63,10 +63,18 @@ router.get('/:id/gamespage',(req,res)=>{
     db.Game.findById(req.params.id,{
         include: {model: db.Player}
     }).then(results=>{
+      console.log(results.Players.id);
       res.render('gamespage-before',{results})
     })
 })
 
+router.post('/:id/gamespage', (req,res) => {
+  db.Player.findById(req.session.playerId).then(
+    (dataPlayer) => {
+      dataPlayer.setStatus()
+    }
+  )
+})
 
 
 module.exports= router

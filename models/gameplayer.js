@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     GameId: DataTypes.INTEGER,
     PlayerId: DataTypes.INTEGER,
+    Status: DataTypes.INTEGER
   });
   GamePlayer.associate = function(models) {
         GamePlayer.belongsTo(models.Game)
