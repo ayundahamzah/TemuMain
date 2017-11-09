@@ -5,7 +5,7 @@ const db = require('../models')
 
 // FUNGSI HELPER
 function checkLogin(req, res, next){
-  if (req.session.loggedIn = true) {
+  if (req.session.loggedIn) {
     next()
   }else{
     res.send('gagal')
@@ -14,9 +14,19 @@ function checkLogin(req, res, next){
 }
 
 // Read
-router.get('/:id',checkLogin, function(req, res){
-  db.Player.findById(req.params.id).then(function (dataPlayer){
-    res.render('player', {dataPlayer: dataPlayer})
+router.get('/:id', checkLogin, function(req, res){
+  console.log(req.session);
+  db.Player.findById(req.params.id, {include: db.Game}).then(function (dataPlayer){
+    // res.send(dataPlayer);
+    // res.render('player', {
+    //   dataPlayer: dataPlayer
+    // })
+    db.Game.findAll().then(function(dataGame){
+      res.render('player', {
+        dataPlayer: dataPlayer,
+        dataGame: dataGame
+      })
+    })
   }).catch(function (err){
     console.log(err);
   })
