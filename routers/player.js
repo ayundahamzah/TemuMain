@@ -34,16 +34,12 @@ router.get('/:id', checkLogin, function(req, res){
 })
 
 // Player After
-router.get('/:id/after', function(req, res){
-  db.Player.findById(req.params.id, {include: db.Game}).then(function (dataPlayer){
-    // res.send(dataPlayer);
-    // res.render('player', {
-    //   dataPlayer: dataPlayer
-    // })
+router.get('/:id/after', checkLogin, function(req, res){
+    db.Player.findById(req.params.id, {include: db.Game}).then(function (dataPlayer){
     db.Game.findAll().then(function(){
-      // res.send(dataPlayer.Games[0].Game_name)
+      // res.send(req.session)
       res.render('player-after', {
-        dataPlayer: dataPlayer
+        dataPlayer: dataPlayer, session: req.session
       })
     })
   }).catch(function (err){
@@ -110,5 +106,30 @@ router.get('/delete/:id', function(req, res){
     console.log(err);
   })
 })
+
+
+// Connect
+router.get('/connect/:id', function(req, res){
+  db.FriendList.findAll(
+    {where:{playerId:req.session.playerId}
+  }).then(function(dataFriend){
+    res.render('player-after',{dataFriend})
+  })
+})
+ 
+
+
+router.post('/connect/:id', function(req, res){
+  db.FriendList.create({
+    playerId: req.session.playerId,
+    friendId: req.params.id
+  }).then(function(){
+    res.redirect(`/players/${req.params.id}`)
+    }).catch(function(){
+      
+      })
+  
+})
+ 
 
 module.exports = router

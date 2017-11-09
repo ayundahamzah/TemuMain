@@ -82,16 +82,15 @@ router.post('/:id/gamespage', (req,res) => {
 
 
 router.get('/:id/gamespage/after', function(req,res) {
-  db.Player.findAll(
-    {include: [db.Game]},
-    {where:{
-      id: req.params.id
-      }
+  db.Game.findAll(
+    {
+      include: [db.Player],
+      where:{id: req.params.id}
     }
   ).then(function(results){
-      // console.log(results[0].Games[0].GamePlayer.Status);
-      // res.send(results)
-      res.render('gamespage-after', {results:results})
+      // let player = results[0].Players
+      // res.send(player)
+      res.render('gamespage-after', {results:results, session: req.session.playerId})
       }).catch(function(err){
         console.log(err);
       })

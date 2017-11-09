@@ -9,21 +9,9 @@
             <td><a href="games/<%=result.id%>/gamespage"><%=result.Game_name%></a></td>
             <td><%=result.Thumbnail%></td>
             <td><%=result.Description%></td>
-            <td>
-              <%if (result.Player !== null) {
-                result.Players.forEach(player => { %>
-                  <ul>
-                    <li>
-                      <%=player.username%>
-                    </li>
-                  </ul>
-                <%})%>
-              <%}%>
-            </td>
             </tr>
           <%})%>
         </ul>
     </table>
-    <a href="/games/add">Add Games</a>
   </body>
 </html>

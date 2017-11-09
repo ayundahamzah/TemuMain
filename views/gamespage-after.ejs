@@ -2,18 +2,18 @@
   <body>
     <table border=1>
       <tr>
-        <td><%=results[0].Games[0].Game_name%></td>
+        <td><%=results[0].Game_name%></td>
         <td>
-          <%=results[0].Games[0].Description%>
+          <%=results[0].Description%>
         </td>
       </tr>
     </table>
     <table>
-      <%for(let i=0;i<results.length;i++){%>
-      <tr>
-          <td><a href="/players/<%= results[i].id %>/after"><%=results[i].Username%></a></td>
-        <%}%>
-      </tr>
+      <%for(let i=0;i<results[0].Players.length;i++){%>
+          <tr>
+            <td><a href="/players/<%= results[0].Players[i].id %>/after"><%=results[0].Players[i].Username%></a></td>
+          </tr>
+          <% } %>
     </table>
   </body>
 </html>

@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     Password: DataTypes.STRING,
     Username: DataTypes.STRING,
     Profile: DataTypes.STRING,
-    Gender: DataTypes.STRING,
-    Friends: DataTypes.STRING,
+    Gender: DataTypes.STRING
 
   });
   //CLASS METHOD
   Player.associate = function(models) {
       Player.belongsToMany(models.Game,{through:"GamePlayer"})
       Player.hasMany(models.GamePlayer)
+      Player.hasMany(models.FriendList)
   }
   
   Player.beforeCreate(function(dataPlayer, options){
