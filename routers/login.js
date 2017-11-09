@@ -19,15 +19,15 @@ router.post('/', function(req, res){
       // console.log("masuk cek data player");
       bcrypt.compare(req.body.Password, dataPlayer.Password).then(function(result){
         if(result){
-          // console.log("masuk cek result");
+          console.log("masuk cek result");
           req.session.loggedIn = true;
           req.session.playerId = dataPlayer.id
           req.session.Email = dataPlayer.Email
           if(dataPlayer.Username == null && dataPlayer.Profile == null){
-            // console.log("masuk ke sono");
+            console.log("masuk ke sono");
             res.redirect(`/players/add/${dataPlayer.id}`)
           } else {
-            // console.log("masuk ke sini");
+            console.log("masuk ke sini");
             res.redirect(`/players/${dataPlayer.id}`)
           }
         }
