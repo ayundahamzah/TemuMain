@@ -113,7 +113,7 @@ router.get('/connect/:id', function(req, res){
   db.FriendList.findAll(
     {where:{playerId:req.session.playerId}
   }).then(function(dataFriend){
-    res.render('player-after',{dataFriend})
+    res.render('playerconnect',{dataFriend})
   })
 })
  

@@ -2,7 +2,7 @@
   <table>
       <tr>
         <td><h2><%= dataPlayer.Username %></h2></td>
-        <% if(dataPlayer.id !== session.playerId){ %>
+        <% if(dataFriend.friendId == dataPlayer.id  ){ %>
           <form class="" action="/players/connect/<%= dataPlayer.id %>" method="post">
             <td><input type="submit" name="" value="Connect"></td>
           </form>
